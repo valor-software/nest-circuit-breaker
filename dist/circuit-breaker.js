@@ -22,7 +22,7 @@ const CircuitBreakerConfigDefaults = {
     shouldErrorBeConsidered: undefined
 };
 const CIRCUIT_BREAKER_CONFIG = 'CircuitBreakerConfig';
-exports.CircuitBreakerProtected = (config) => common_1.ReflectMetadata(CIRCUIT_BREAKER_CONFIG, _.defaults(CircuitBreakerConfigDefaults, config));
+exports.CircuitBreakerProtected = (config) => common_1.SetMetadata(CIRCUIT_BREAKER_CONFIG, _.defaults(CircuitBreakerConfigDefaults, config));
 function addCircuitBreakerSupportTo(service, group) {
     const commandCache = new Map();
     return new Proxy(service, {

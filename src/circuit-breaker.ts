@@ -1,7 +1,6 @@
 /* tslint:disable: prefer-method-signature */
 import { CircuitBreaker, circuitFactory, Command, commandFactory, CommandMetrics, metricsFactory } from 'hystrixjs';
-import { ReflectMetadata } from '@nestjs/common';
-import { Metatype } from '@nestjs/common/interfaces';
+import { SetMetadata } from '@nestjs/common';
 import { interval } from 'rxjs/observable/interval';
 import { from } from 'rxjs/observable/from';
 import { mergeMap } from 'rxjs/operators/mergeMap';
@@ -27,9 +26,9 @@ const CircuitBreakerConfigDefaults: CircuitBreakerConfig = {
 
 const CIRCUIT_BREAKER_CONFIG = 'CircuitBreakerConfig';
 export const CircuitBreakerProtected = (config?: CircuitBreakerConfig) =>
-  ReflectMetadata(CIRCUIT_BREAKER_CONFIG, _.defaults(CircuitBreakerConfigDefaults, config));
+  SetMetadata(CIRCUIT_BREAKER_CONFIG, _.defaults(CircuitBreakerConfigDefaults, config));
 
-export function addCircuitBreakerSupportTo<T>(service: T, group: Metatype<T>): T {
+export function addCircuitBreakerSupportTo<T>(service: T, group: any): T {
   const commandCache = new Map<string, Command>();
 
   return new Proxy(service as any, {

@@ -1,13 +1,13 @@
 import 'jasmine';
 import { Test } from '@nestjs/testing';
-import { Component, HttpStatus } from '@nestjs/common';
+import { HttpStatus, Injectable } from '@nestjs/common';
 import {
   addCircuitBreakerSupportTo, CircuitBreakerProtected, makeCircuitBreakerStateObserver,
   resetAllCircuitBreakerCaches
 } from '../circuit-breaker';
 import * as _ from 'lodash/fp';
 
-@Component()
+@Injectable()
 class DumbService {
   name = 'DumbService';
 
@@ -58,7 +58,7 @@ let dumbService: DumbService;
 describe('CircuitBreaker', () => {
   beforeEach(async() => {
     const module = await Test.createTestingModule({
-      components: [
+      providers: [
         {
           provide: DumbService,
           useFactory: () => {
