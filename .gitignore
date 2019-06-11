@@ -6,5 +6,6 @@ coverage/*
 # dependencies
 package-lock.json
 **/node_modules
+dist/
 yarn.lock
 package-lock.json

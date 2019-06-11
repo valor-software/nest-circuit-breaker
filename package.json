@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cbdr/nest-circuitbreaker.git"
+    "url": "git@github.com:valor-software/nest-circuit-breaker.git"
   },
   "author": "georgii.rychko@valor-software.com",
   "license": "UNLICENSED",
