@@ -45,7 +45,7 @@
   "peerDependencies": {
     "@nestjs/common": "6.3.1",
     "@nestjs/core": "6.3.1",
-    "lodash": "4.17.11",
+    "lodash": "4.17.19",
     "rxjs": "6.5.2",
     "reflect-metadata": "0.1.13"
   },
@@ -59,7 +59,7 @@
     "@types/hystrixjs": "0.2.0",
     "@types/node": "12.0.7",
     "chokidar-cli": "1.2.2",
-    "lodash": "4.17.11",
+    "lodash": "4.17.19",
     "jasmine": "2.99.0",
     "codelyzer": "4.5.0",
     "jasmine-core": "2.8.0",
